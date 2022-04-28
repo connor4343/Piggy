@@ -60,8 +60,8 @@ class Piggy(PiggyParent):
       for side in range(4):
         self.fwd()
         time.sleep(2)
-        self.stop()
         self.right()
+        self.stop()
       
 
 
