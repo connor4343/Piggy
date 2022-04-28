@@ -57,9 +57,11 @@ class Piggy(PiggyParent):
     ****************
     '''
     def varmecky(self):
-      self.fwd()
-      time.sleep(2)
-      self.stop()
+      for side in range(4):
+        self.fwd()
+        time.sleep(2)
+        self.stop()
+        self.right()
       
 
 
