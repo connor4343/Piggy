@@ -17,8 +17,8 @@ class Piggy(PiggyParent):
         ''' 
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
-        self.LEFT_DEFAULT = 80
-        self.RIGHT_DEFAULT = 80
+        self.LEFT_DEFAULT = 75
+        self.RIGHT_DEFAULT = 75 
         self.MIDPOINT = 1475  # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
         self.load_defaults()
@@ -40,7 +40,8 @@ class Piggy(PiggyParent):
                 "s": ("Shy", self.shy),
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
-                "q": ("Quit", self.quit)
+                "q": ("Quit", self.quit),
+                "v": ("Varmecky", self.varmecky)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -55,7 +56,15 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
+    def varmecky(self):
+      self.fwd()
+      time.sleep(2)
+      self.stop()
+      
 
+
+
+      
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
