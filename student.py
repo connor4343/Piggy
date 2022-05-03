@@ -68,7 +68,7 @@ class Piggy(PiggyParent):
         for safety in range(5):
           self.read_distance()
           self.right(primary=90, counter=-90)
-          time.sleep(3.5)
+          time.sleep(2.5)
         self.stop()
          
 
