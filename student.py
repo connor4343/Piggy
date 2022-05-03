@@ -64,7 +64,12 @@ class Piggy(PiggyParent):
         time.sleep(.8)
       self.stop()
         
-      
+    def safe_to_dance(self):
+        for safety in range(5):
+          self.read_distance()
+          self.right(primary=90, counter=-90)
+          time.sleep(3.5)
+         
 
 
 
@@ -90,11 +95,6 @@ class Piggy(PiggyParent):
           print("you don't have enough room to dance")
         self.stop()
         
-
-    def safe_to_dance(self):
-        self.right(primary=90, counter=-90)
-        time.sleep(3.5)
-        self.read_distance()
         
 
     def shake(self):
