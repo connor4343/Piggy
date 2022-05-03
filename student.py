@@ -79,7 +79,7 @@ class Piggy(PiggyParent):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
         self.safe_to_dance()
-        if self.read_distance() >= 2000:
+        if self.read_distance() >= 500:
           # lower-ordered example...
           self.right(primary=90, counter=-90)
           time.sleep(1.75)
