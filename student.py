@@ -82,8 +82,12 @@ class Piggy(PiggyParent):
         self.back()
         time.sleep(1)
         for shake in range(5):
-          self.left(primary=60, counter=0)
-          self.right(primary=60, counter=0)
+          self.left(primary=90, counter=-45)
+          time.sleep(.5)
+          self.right(primary=90, counter=-45)
+          time.sleep(.5)
+        self.stop()
+        
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
