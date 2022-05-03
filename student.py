@@ -72,25 +72,30 @@ class Piggy(PiggyParent):
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
-        
-        # lower-ordered example...
-        self.right(primary=90, counter=-90)
-        time.sleep(1.75)
-        self.fwd()
-        time.sleep(1)
-        self.back()
-        time.sleep(2)
-        for shake in range(5):
-          self.left(primary=90, counter=-45)
-          time.sleep(.1)
-          self.right(primary=90, counter=-45)
-          time.sleep(.1)
+        self.safe_to_dance()
+        if self.read_distance() >= 2000:
+          # lower-ordered example...
+          self.right(primary=90, counter=-90)
+          time.sleep(1.75)
+          self.fwd()
+          time.sleep(1)
+          self.back()
+          time.sleep(2)
+          for shake in range(5):
+            self.left(primary=90, counter=-45)
+            time.sleep(.1)
+            self.right(primary=90, counter=-45)
+            time.sleep(.1)
+        else:
+          print("you don't have enough room to dance")
         self.stop()
         
 
     def safe_to_dance(self):
-        """ Does a 360 distance check and returns true if safe """
-        pass
+        self.right(primary=90, counter=-90)
+        time.sleep(3.5)
+        self.read_distance()
+        
 
     def shake(self):
         """ Another example move """
