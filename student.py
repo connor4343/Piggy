@@ -75,17 +75,16 @@ class Piggy(PiggyParent):
         
         # lower-ordered example...
         self.right(primary=90, counter=-90)
-        time.sleep(2)
+        time.sleep(1.75)
         self.fwd()
-        time.sleep(2)
-        self.stop()
-        self.back()
         time.sleep(1)
+        self.back()
+        time.sleep(2)
         for shake in range(5):
           self.left(primary=90, counter=-45)
-          time.sleep(.5)
+          time.sleep(.1)
           self.right(primary=90, counter=-45)
-          time.sleep(.5)
+          time.sleep(.1)
         self.stop()
         
 
