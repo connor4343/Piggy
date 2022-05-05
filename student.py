@@ -67,7 +67,7 @@ class Piggy(PiggyParent):
     def safe_to_dance(self):
       self.read_distance()
       self.servo(1000)
-      if read_distance() > 700:
+      if self.read_distance() > 700:
         return True
         for safety in range(5):
           self.read_distance()
@@ -75,12 +75,12 @@ class Piggy(PiggyParent):
           self.right(primary=90, counter=-90)
           time.sleep(2.5)
         
-        if read_distance() > 700:
+        if self.read_distance() > 700:
             return True
-        if read_distance() < 700:
+        if self.read_distance() < 700:
             return False
             self.stop()
-      if read_distance() < 700:
+      if self.read_distance() < 700:
         return False
         self.stop()
         
