@@ -96,7 +96,7 @@ class Piggy(PiggyParent):
     def move_to_wall(self):
       self.fwd()
       self.read_distance()     
-      if self.read_distance() <= 1000:
+      if self.read_distance() <= 750:
         self.stop()
       
 
@@ -106,7 +106,7 @@ class Piggy(PiggyParent):
         self.read_distance()
         if self.read_distance() <= 600:
           self.right(primary = 90, counter = -90)
-          time.sleep(.9)
+          time.sleep(.85)
           
         
       
