@@ -41,7 +41,8 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "v": ("Varmecky", self.varmecky)
+                "v": ("Varmecky", self.varmecky),
+                "m": ("MW", self.move_to_wall)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -91,7 +92,16 @@ class Piggy(PiggyParent):
         
       self.stop()
          
-
+    def move_to_wall(self):
+      self.read_distance()
+      self.fwd()
+      if self.read_distance() < 500:
+        self.stop()
+      
+      
+        
+      
+      
 
 
       
