@@ -43,7 +43,8 @@ class Piggy(PiggyParent):
                 "q": ("Quit", self.quit),
                 "v": ("Varmecky", self.varmecky),
                 "m": ("MW", self.move_to_wall),
-                "t": ("WT", self.wall_turn)
+                "t": ("WT", self.wall_turn),
+                "b": ("MTB", self.move_to_box)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
