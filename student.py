@@ -114,7 +114,9 @@ class Piggy(PiggyParent):
         self.fwd()
       self.stop()
       self.servo(1050)
+      print("123")
       if self.read_distance() > 1500:
+        print("first one read")
         self.left(primary=90, counter=-90)
         time.sleep(.5)
         self.fwd()
@@ -127,6 +129,7 @@ class Piggy(PiggyParent):
         self.fwd()
 
       else:
+        print("it reached the else")
         self.servo(1950)
         if self.read_distance() > 1000:
           self.right(primary=90, counter=-90)
