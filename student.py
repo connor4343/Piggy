@@ -132,7 +132,7 @@ class Piggy(PiggyParent):
         print("it reached the else")
         self.servo(1950)
         print("it reached the else2")
-        if self.read_distance() > 1000:
+        while self.read_distance() > 1000:
           print("it reached the else3")
           self.right(primary=90, counter=-90)
           time.sleep(.5)
