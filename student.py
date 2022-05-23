@@ -109,6 +109,8 @@ class Piggy(PiggyParent):
           self.right(primary = 90, counter = -90)
           time.sleep(.85)
           
+   
+  
     def move_to_box(self):
     
       while self.read_distance() > 400:
@@ -124,7 +126,7 @@ class Piggy(PiggyParent):
       if right > left:
         print("first one read")
         self.right(primary=90, counter=-90)
-        time.sleep(.5)
+        time.sleep(.45)
         self.fwd()
         self.servo(2000)
         while self.read_distance() < 2000:
@@ -142,7 +144,7 @@ class Piggy(PiggyParent):
         while self.read_distance() > 1000:
           print("it reached the else3")
           self.left(primary=90, counter=-90)
-          time.sleep(.5)
+          time.sleep(.45)
           self.fwd()
           self.servo(1000)
           while self.read_distance() < 2000:
