@@ -136,7 +136,7 @@ class Piggy(PiggyParent):
         self.fwd()
         time.sleep(1)
         self.left(primary=90, counter=-90)
-        time.sleep(.45)
+        time.sleep(.4)
         self.fwd()
 
       else:
@@ -155,7 +155,7 @@ class Piggy(PiggyParent):
           self.fwd()
           time.sleep(1)
           self.right(primary=90, counter=-90)
-          time.sleep(.45)
+          time.sleep(.4)
           self.fwd()
           print("it reached the else4")
           
