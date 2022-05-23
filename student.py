@@ -112,7 +112,7 @@ class Piggy(PiggyParent):
    
   
     def move_to_box(self):
-    
+      self.servo(1475)
       while self.read_distance() > 300:
         self.fwd()
       self.stop()
