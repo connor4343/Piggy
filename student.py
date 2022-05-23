@@ -113,7 +113,7 @@ class Piggy(PiggyParent):
   
     def move_to_box(self):
       self.servo(1475)
-      while self.read_distance() > 300:
+      while self.read_distance() > 200:
         self.fwd()
       self.stop()
       self.servo(1050)
@@ -131,10 +131,10 @@ class Piggy(PiggyParent):
         self.servo(2000)
         while self.read_distance() < 2000:
           self.fwd()
-          self.servo(2500)
+          self.servo(2250)
           print("second one read")
         self.fwd()
-        time.sleep(1)
+        time.sleep(.75)
         self.left(primary=90, counter=-90)
         time.sleep(.4)
         self.fwd()
@@ -151,9 +151,9 @@ class Piggy(PiggyParent):
           self.servo(1000)
           while self.read_distance() < 2000:
             self.fwd()
-            self.servo(500)
+            self.servo(750)
           self.fwd()
-          time.sleep(1)
+          time.sleep(.75)
           self.right(primary=90, counter=-90)
           time.sleep(.4)
           self.fwd()
