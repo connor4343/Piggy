@@ -163,23 +163,23 @@ class Piggy(PiggyParent):
         
     def scan(self):
       while True:
-        self.fwd()
+        self.fwd(30,30)
         time.sleep(.25)
         self.servo(1475)
-        time.sleep(.75)
+        time.sleep(.2)
         center = self.read_distance()
         print("1")
         
         self.servo(1900)
-        time.sleep(.75)
+        time.sleep(.2)
         right = self.read_distance()
         
         self.servo(1475)
-        time.sleep(.75)
+        time.sleep(.2)
         center = self.read_distance()
         
         self.servo(1100)
-        time.sleep(.75)
+        time.sleep(.2)
         left = self.read_distance()
        
         
