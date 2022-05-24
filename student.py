@@ -163,6 +163,8 @@ class Piggy(PiggyParent):
         
     def scan(self):
       while True:
+        self.fwd()
+        time.sleep(.25)
         self.servo(1475)
         center = self.read_distance()
       
@@ -170,6 +172,7 @@ class Piggy(PiggyParent):
         self.servo(1900)
         right = self.read_distance()
         if right > center and left:
+          self.stop()
           print("first one read")
           self.servo(1000)
           self.right(primary=90, counter=-90)
@@ -189,6 +192,7 @@ class Piggy(PiggyParent):
         self.servo(1100)
         left = self.read_distance()
         if left > center and right:
+          self.stop()
           self.servo(2000)
           print("it reached the else2")
           while self.read_distance() > 1000:
