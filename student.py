@@ -189,7 +189,7 @@ class Piggy(PiggyParent):
             self.stop()
             print("it reached the else2")
 
-            self.left(primary=90, counter=-90)
+            self.right(primary=90, counter=-90)
             time.sleep(.45)
             self.fwd()
             self.servo(1000)
@@ -198,7 +198,7 @@ class Piggy(PiggyParent):
               self.servo(750)
             self.fwd()
             time.sleep(.75)
-            self.right(primary=90, counter=-90)
+            self.left(primary=90, counter=-90)
             time.sleep(.4)
             self.fwd()
           
@@ -209,7 +209,7 @@ class Piggy(PiggyParent):
             self.stop()
             print("first one read")
             self.servo(1000)
-            self.right(primary=90, counter=-90)
+            self.left(primary=90, counter=-90)
             time.sleep(.45)
             self.fwd()
             self.servo(2000)
@@ -219,7 +219,7 @@ class Piggy(PiggyParent):
               print("second one read")
             self.fwd()
             time.sleep(.75)
-            self.left(primary=90, counter=-90)
+            self.right(primary=90, counter=-90)
             time.sleep(.4)
             self.fwd() 
             
