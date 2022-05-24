@@ -209,19 +209,19 @@ class Piggy(PiggyParent):
             self.stop()
             print("it reached the else2")
 
-              self.left(primary=90, counter=-90)
-              time.sleep(.45)
+            self.left(primary=90, counter=-90)
+            time.sleep(.45)
+            self.fwd()
+            self.servo(1000)
+            while self.read_distance() < 2000:
               self.fwd()
-              self.servo(1000)
-              while self.read_distance() < 2000:
-                self.fwd()
-                self.servo(750)
-              self.fwd()
-              time.sleep(.75)
-              self.right(primary=90, counter=-90)
-              time.sleep(.4)
-              self.fwd()
-      
+              self.servo(750)
+            self.fwd()
+            time.sleep(.75)
+            self.right(primary=90, counter=-90)
+            time.sleep(.4)
+            self.fwd()
+    
       
       
 
