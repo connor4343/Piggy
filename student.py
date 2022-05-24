@@ -203,7 +203,7 @@ class Piggy(PiggyParent):
             time.sleep(.4)
             self.fwd()
         
-           else:
+          else:
             self.stop()
             self.servo(2000)
             print("it reached the else2")
