@@ -169,11 +169,20 @@ class Piggy(PiggyParent):
         time.sleep(.75)
         center = self.read_distance()
         print("1")
-      
-
+        
         self.servo(1900)
         time.sleep(.75)
         right = self.read_distance()
+        
+        self.servo(1475)
+        time.sleep(.75)
+        center = self.read_distance()
+        
+        self.servo(1100)
+        time.sleep(.75)
+        left = self.read_distance()
+       
+        
         if right and center and left < 400:
           
           if right > center and left:
@@ -194,16 +203,7 @@ class Piggy(PiggyParent):
             time.sleep(.4)
             self.fwd()
         
-        self.servo(1475)
-        time.sleep(.75)
-        center = self.read_distance()
-
-        self.servo(1100)
-        time.sleep(.75)
-        left = self.read_distance()
-        if right and center and left < 400:
-          
-          if left > center and right:
+           else:
             self.stop()
             self.servo(2000)
             print("it reached the else2")
