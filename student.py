@@ -168,7 +168,7 @@ class Piggy(PiggyParent):
 
         self.servo(1900)
         right = self.read_distance()
-        if right > center and left
+        if right > center and left:
           print("first one read")
           self.servo(1000)
           self.right(primary=90, counter=-90)
@@ -187,7 +187,7 @@ class Piggy(PiggyParent):
 
         self.servo(1100)
         left = self.read_distance()
-        if left > center and right
+        if left > center and right:
           self.servo(2000)
           print("it reached the else2")
           while self.read_distance() > 1000:
