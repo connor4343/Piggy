@@ -187,9 +187,29 @@ class Piggy(PiggyParent):
           
           if right > center and right > left:
             self.stop()
+            print("it reached the else2")
+
+            self.left(primary=90, counter=-90)
+            time.sleep(.45)
+            self.fwd()
+            self.servo(1000)
+            while self.read_distance() < 2000:
+              self.fwd()
+              self.servo(750)
+            self.fwd()
+            time.sleep(.75)
+            self.right(primary=90, counter=-90)
+            time.sleep(.4)
+            self.fwd()
+          
+        
+        if center < 600 and right < 600:
+          
+          if left > center and left > right:
+            self.stop()
             print("first one read")
             self.servo(1000)
-            self.left(primary=90, counter=-90)
+            self.right(primary=90, counter=-90)
             time.sleep(.45)
             self.fwd()
             self.servo(2000)
@@ -199,28 +219,11 @@ class Piggy(PiggyParent):
               print("second one read")
             self.fwd()
             time.sleep(.75)
-            self.right(primary=90, counter=-90)
-            time.sleep(.4)
-            self.fwd()
-        
-        if center < 600 and right < 600:
-          
-          if left > center and left > right:
-            self.stop()
-            print("it reached the else2")
-
-            self.right(primary=90, counter=-90)
-            time.sleep(.45)
-            self.fwd()
-            self.servo(1000)
-            while self.read_distance() < 2000:
-              self.fwd()
-              self.servo(750)
-            self.fwd()
-            time.sleep(.75)
             self.left(primary=90, counter=-90)
             time.sleep(.4)
-            self.fwd()
+            self.fwd() 
+            
+            
     
       
       
