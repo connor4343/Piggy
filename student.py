@@ -185,7 +185,7 @@ class Piggy(PiggyParent):
         
         if center and left < 600:
           
-          if right > center and left:
+          if right > center and right > left:
             self.stop()
             print("first one read")
             self.servo(1000)
@@ -205,7 +205,7 @@ class Piggy(PiggyParent):
         
         if center and right < 600:
           
-          if left > center and right:
+          if left > center and left > right:
             self.stop()
             self.servo(2000)
             print("it reached the else2")
