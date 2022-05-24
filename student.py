@@ -174,45 +174,53 @@ class Piggy(PiggyParent):
         self.servo(1900)
         time.sleep(.75)
         right = self.read_distance()
-        if right > center and left:
-          self.stop()
-          print("first one read")
-          self.servo(1000)
-          self.right(primary=90, counter=-90)
-          time.sleep(.45)
-          self.fwd()
-          self.servo(2000)
-          while self.read_distance() < 2000:
+        if right and center and left < 400:
+          
+          if right > center and left:
+            self.stop()
+            print("first one read")
+            self.servo(1000)
+            self.right(primary=90, counter=-90)
+            time.sleep(.45)
             self.fwd()
-            self.servo(2250)
-            print("second one read")
-          self.fwd()
-          time.sleep(.75)
-          self.left(primary=90, counter=-90)
-          time.sleep(.4)
-          self.fwd()
+            self.servo(2000)
+            while self.read_distance() < 2000:
+              self.fwd()
+              self.servo(2250)
+              print("second one read")
+            self.fwd()
+            time.sleep(.75)
+            self.left(primary=90, counter=-90)
+            time.sleep(.4)
+            self.fwd()
+        
+        self.servo(1475)
+        time.sleep(.75)
+        center = self.read_distance()
 
         self.servo(1100)
         time.sleep(.75)
         left = self.read_distance()
-        if left > center and right:
-          self.stop()
-          self.servo(2000)
-          print("it reached the else2")
-          while self.read_distance() > 1000:
-            print("it reached the else3")
-            self.left(primary=90, counter=-90)
-            time.sleep(.45)
-            self.fwd()
-            self.servo(1000)
-            while self.read_distance() < 2000:
+        if right and center and left < 400:
+          
+          if left > center and right:
+            self.stop()
+            self.servo(2000)
+            print("it reached the else2")
+            while self.read_distance() > 1000:
+              print("it reached the else3")
+              self.left(primary=90, counter=-90)
+              time.sleep(.45)
               self.fwd()
-              self.servo(750)
-            self.fwd()
-            time.sleep(.75)
-            self.right(primary=90, counter=-90)
-            time.sleep(.4)
-            self.fwd()
+              self.servo(1000)
+              while self.read_distance() < 2000:
+                self.fwd()
+                self.servo(750)
+              self.fwd()
+              time.sleep(.75)
+              self.right(primary=90, counter=-90)
+              time.sleep(.4)
+              self.fwd()
       
       
       
