@@ -179,7 +179,7 @@ class Piggy(PiggyParent):
         right = self.read_distance()
        
         
-        if center < 600 and left < 600:
+        if center < 350 and left < 350:
           
           if right > center and right > left:
             self.stop()
@@ -197,7 +197,7 @@ class Piggy(PiggyParent):
             self.left(primary=90, counter=-90)
             time.sleep(.4)
             self.fwd()
-        elif left < 600:
+        elif left < 350:
           
             self.stop()
             self.right(primary=90, counter=20)
@@ -209,7 +209,7 @@ class Piggy(PiggyParent):
             self.fwd()
           
         
-        if center < 600 and right < 600:
+        if center < 350 and right < 350:
           
           if left > center and left > right:
             self.stop()
@@ -228,7 +228,7 @@ class Piggy(PiggyParent):
             self.right(primary=90, counter=-90)
             time.sleep(.4)
             self.fwd() 
-        elif right < 600:
+        elif right < 350:
           
     
             self.stop()
