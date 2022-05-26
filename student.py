@@ -201,6 +201,16 @@ class Piggy(PiggyParent):
             self.left(primary=90, counter=-90)
             time.sleep(.4)
             self.fwd()
+
+          if left > right and center > right:
+            self.stop()
+            self.left(primary=90, counter=-90)
+            time.sleep(.4)
+            self.fwd()
+            time.sleep(.4)
+            self.right(primary=90, counter=-90)
+            time.sleep(.4)
+            self.fwd()
           
         
         if center < 600 and right < 600:
@@ -222,7 +232,16 @@ class Piggy(PiggyParent):
             self.right(primary=90, counter=-90)
             time.sleep(.4)
             self.fwd() 
-            
+
+          if right > left and center > left:
+            self.stop()
+            self.right(primary=90, counter=-90)
+            time.sleep(.4)
+            self.fwd()
+            time.sleep(.4)
+            self.left(primary=90, counter=-90)
+            time.sleep(.4)
+            self.fwd()
             
     
       
